@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Jenta Cloud-Shelf E-Library</title>
+        <link rel="stylesheet" type="text/css" href="../bootstrap-4.5.0-dist/css/bootstrap-grid.min.css">
+        <link rel="stylesheet" type="text/css" href="../bootstrap-4.5.0-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../Font Awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="../Styles/style.css">
+        <link rel="stylesheet" type="text/css" href="../Styles/mystyle.css">
+
+        <script src="../Scripts/jquery-3.4.1.min.js"></script>
+        <script src="../popper/popper.min.js"></script>
+        <script src="../bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+        <script src="../Scripts/functions.js"></script>
+    </head>
+    <body>
+        <div class="profile-name">
+            <span>ADMIN</span>
+        </div>
+        <!-- Navigation bar -->
+        <div class="navbar navbar-dark black-bg">
+            <div class="container-fluid">
+                <div class="nav-item">
+                    <button class="btn btn-outline-light btn-sm" id="back-button"><span class="fa fa-arrow-left"></span> Back</button>
+                </div>
+                <div class="navbar-brand">
+                    <img src="../Pics/logo edited.jpg">
+                </div>
+                
+                <div class="nav-item">
+                    <a href="http://localhost:3000/index.html">
+                        <button class="btn btn-outline-light btn-sm">Log Out <span class="fa fa-remove"></span></button>
+                    </a>
+                </div>
+               
+            </div>
+        </div>
+        
+        <!-- Upload Book -->
+        <div class="container-fluid theme-color book-container show" style="margin-bottom: 4em;" id="upload-box">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h5 class="display-5">UPLOAD BOOK</h3>
+                </div>
+            </div>
+            <form role="form">
+                <div class="form-group">
+                    <label for="title" class="upload-text">Title</label>
+                    <input type="text" class="form-control" id="title" placeholder="Enter title of book">
+                    <small class="error" id = "titleErrorText"></small>
+                </div>
+                <div class="form-group">
+                    <label for="author" class="upload-text">Author</label>
+                    <input type="text" class="form-control" id="author" placeholder="Enter name of author">
+                    <small class="error" id = "authorErrorText"></small>
+                </div>
+                <div class="form-group">
+                    <label for="description" class="upload-text">Description (optional)</label>
+                    <input type="text" class="form-control" id="description" placeholder="Book description">
+                    <small class="error" id = "descriptionErrorText"></small>
+                </div>
+                <div class="form-group radio-text">
+                    <p class="help-block upload-text">
+                        Select category of book
+                    </p>
+                    <label class="checkbox-inline form-radio">
+                        <input type="radio" name="category" id="" value="art" checked> Art
+                    </label>
+                    <label class="checkbox-inline form-radio">
+                        <input type="radio" name= "category" id="" value="science"> Science
+                    </label>
+                    <label class="checkbox-inline form-radio">
+                        <input type="radio" name="category" id="" value="health"> Health
+                    </label>
+                    <label class="checkbox-inline form-radio">
+                        <input type="radio" name="category" id="" value="romance"> Romance
+                    </label>
+                    <label class="checkbox-inline form-radio">
+                        <input type="radio" name="category" id="" value="fantasy"> Fantasy
+                    </label>
+                    <label class="checkbox-inline form-radio">
+                        <input type="radio" name="category" id="" value="religion"> Religion
+                    </label>
+                    <label class="checkbox-inline form-radio">
+                        <input type="radio" name="category" id="" value="others"> Others
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="inputfile" class="upload-text"><p>Upload File</p></label>
+                    <input type="file" id="inputfile" class="upload-file">
+                    <small class="error-upload" id="uploadErrorText"></small>
+                    <p class="help-block">Note: Must be a PDF File</p>
+                </div>
+                <button type="submit" class="btn btn-outline-dark upload-button" id="submit">Submit</button>
+            </form>
+        </div>
+        <div class="container-fluid theme-color book-container text-center show" style="margin-bottom: 4em; display: none;" id="success-box">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="display-4 show">Book Successfully Uploaded!!!</h4>
+                    <button class="btn btn-dark show" id="upload-again">Upload Again</button>
+                </div>
+            </div>
+        </div>
+        <script src="../Scripts/Admin/admin-upload.js"></script>
+    </body>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Jenta Cloud-Shelf E-Library</title>
+        <link rel="stylesheet" type="text/css" href="../bootstrap-4.5.0-dist/css/bootstrap-grid.min.css">
+        <link rel="stylesheet" type="text/css" href="../bootstrap-4.5.0-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../Font Awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="../Styles/style.css">
+        <link rel="stylesheet" type="text/css" href="../Styles/mystyle.css">
+
+        <script src="../Scripts/jquery-3.4.1.min.js"></script>
+        <script src="../popper/popper.min.js"></script>
+        <script src="../bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+        <script src="../Scripts/Admin/render.js"></script>
+
+    </head>
+    <body>
+        
+        <!-- Navigation bar -->
+        <div class="navbar navbar-dark black-bg">
+            <div class="container-fluid">
+                <div class="navbar-brand">
+                    <img src="../Pics/logo edited.jpg">
+                </div>
+                <div class="nav-item">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for book by..." id='search-box'>
+                        <div class="input-group-append">
+                          <select class="form-control search-option" id="search-option">
+                              <option value="Title">Title</option>
+                              <option value="Author">Author</option>
+                              <option value="both">Title and Author</option>
+                          </select>
+                        </div>
+                      </div>        
+                </div>
+                <div class="nav-item">
+                    <a href="http://localhost:3000/admin/admin-upload.html">
+                        <button class="btn btn-outline-light btn-sm">Upload A Book   <span class="fa fa-upload"></span></button>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="http://localhost:3000/admin/upload-requests.html">
+                        <button class="btn btn-outline-light btn-sm">Check Upload Requests   <span class="fa fa-server"></span></button>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="http://localhost:3000/index.html">
+                        <button class="btn btn-outline-light btn-sm">Log Out <span class="fa fa-remove"></span></button>
+                    </a>
+                </div>
+               
+            </div>
+            <div class="profile-name">
+                <span>ADMIN</span>
+            </div>
+        </div>
+        
+        <!-- Browse by subject -->
+        <div class="container-fluid text-center theme-color book-container show" id="browse-subject-container">
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="display-5">BROWSE BY SUBJECT</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2" id="toggle-art" data-toggle="off">
+                        <p class="subject">Art</p>
+                        <p class="subject"><i class="fa fa-paint-brush icon"></i></p>
+                        <small id="no_art">300 Books</small>
+                </div>
+                <div class="col-2" id="toggle-science" data-toggle="off">
+                    <p class="subject">Science</p>
+                    <p class="subject"><i class="fa fa-cogs icon"></i></p>
+                    <small id="no_science">300 Books</small>
+                </div>
+                <div class="col-2" id="toggle-health" data-toggle="off">
+                    <p class="subject">Health</p>
+                    <p class="subject"><i class="fa fa-stethoscope icon"></i></p>
+                    <small id="no_health">300 Books</small>
+                </div>
+                <div class="col-2" id="toggle-romance" data-toggle="off">
+                    <p class="subject">Romance</p>
+                    <p class="subject"><i class="fa fa-gratipay icon"></i></p>
+                    <small id="no_romance">300 Books</small>
+                </div>
+                <div class="col-2" id="toggle-fantasy" data-toggle="off">
+                    <p class="subject">Fantasy</p>
+                    <p class="subject"><i class="fa fa-rebel icon"></i></p>
+                    <small id="no_fantasy">300 Books</small>
+                </div>
+                <div class="col-2" id="toggle-religion" data-toggle="off">
+                    <p class="subject">Religion</p>
+                    <p class="subject"><i class="fa fa-users icon"></i></p>
+                    <small id="no_religion">300 Books</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recently uploaded -->
+        <div class="container-fluid text-center theme-color book-container black-bg show" id="recent-upload-container">
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="display-5">RECENTLY UPLOADED</h3>
+                </div>
+            </div>
+            <div class="row" id="recent-upload-row">
+                <!-- <div class="col-xs-6 col-sm-4 col-md-3">
+                    <div class="card">
+                        <img class="card-img-top book-thumbnail" src="../Pics/PDF thumbnail.jpg">
+                        <div class="card-body">
+                            <h6 class="display-5 upload-text">Title of book </h6>
+                            <button class="btn btn-outline-dark btn-sm">Read</button>
+                            <button class="btn btn-outline-dark btn-sm">Delete</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                    <div class="card">
+                        <img class="card-img-top book-thumbnail" src="../Pics/PDF thumbnail.jpg">
+                        <div class="card-body">
+                            <button class="btn btn-outline-dark">Read</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3 ">
+                    <div class="card">
+                        <img class="card-img-top book-thumbnail" src="../Pics/PDF thumbnail.jpg">
+                        <div class="card-body">
+                            <button class="btn btn-outline-dark">Read</button>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            
+        </div>
+
+        <!-- Most Read -->
+        <div class="container-fluid text-center theme-color book-container black-bg show" id="most-read-container">
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="display-5">MOST READ</h3>
+                </div>
+            </div>
+            <div class="row" id="most-read-row">
+                <!-- <div class="col-xs-6 col-sm-4 col-md-3">
+                    <div class="card">
+                        <img class="card-img-top book-thumbnail" src="../Pics/PDF thumbnail.jpg">
+                        <div class="card-body">
+                            <button class="btn btn-outline-dark">Read</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                    <div class="card">
+                        <img class="card-img-top book-thumbnail" src="../Pics/PDF thumbnail.jpg">
+                        <div class="card-body">
+                            <button class="btn btn-outline-dark">Read</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                    <div class="card">
+                        <img class="card-img-top book-thumbnail" src="../Pics/PDF thumbnail.jpg">
+                        <div class="card-body">
+                            <button class="btn btn-outline-dark">Read</button>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            
+        </div>
+
+        <!-- All Books -->
+        <div class="container-fluid text-center theme-color book-container black-bg show" id="all-book-container">
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="display-5">ALL BOOKS</h3>
+                </div>
+            </div>
+            <div class="row" id = "all-book-row">
+                <!-- <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                    <div class="card">
+                        <img class="card-img-top book-thumbnail" src="../Pics/PDF thumbnail.jpg">
+                        <div class="card-body">
+                            <button class="btn btn-outline-dark">Read</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                    <div class="card">
+                        <img class="card-img-top book-thumbnail" src="../Pics/PDF thumbnail.jpg">
+                        <div class="card-body">
+                            <button class="btn btn-outline-dark">Read</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                    <div class="card">
+                        <img class="card-img-top book-thumbnail" src="../Pics/PDF thumbnail.jpg">
+                        <div class="card-body">
+                            <button class="btn btn-outline-dark">Read</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                    <div class="card">
+                        <img class="card-img-top book-thumbnail" src="../Pics/PDF thumbnail.jpg">
+                        <div class="card-body">
+                            <button class="btn btn-outline-dark">Read</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                    <div class="card">
+                        <img class="card-img-top book-thumbnail" src="../Pics/PDF thumbnail.jpg">
+                        <div class="card-body">
+                            <button class="btn btn-outline-dark">Read</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                    <div class="card">
+                        <img class="card-img-top book-thumbnail" src="../Pics/PDF thumbnail.jpg">
+                        <div class="card-body">
+                            <button class="btn btn-outline-dark">Read</button>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            
+        </div>
+
+        <!-- SUBJECT -->
+        <div class="container-fluid text-center theme-color book-container black-bg show" id="subject-container" style="display: none;">
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="display-5" id="subject-header">SUBJECT</h3>
+                </div>
+            </div>
+            <div class="row" id="subject-row">
+                <!-- <div class="col-xs-6 col-sm-4 col-md-3">
+                    <div class="card">
+                        <img class="card-img-top book-thumbnail" src="../Pics/PDF thumbnail.jpg">
+                        <div class="card-body">
+                            <button class="btn btn-outline-dark">Read</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                    <div class="card">
+                        <img class="card-img-top book-thumbnail" src="../Pics/PDF thumbnail.jpg">
+                        <div class="card-body">
+                            <button class="btn btn-outline-dark">Read</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                    <div class="card">
+                        <img class="card-img-top book-thumbnail" src="../Pics/PDF thumbnail.jpg">
+                        <div class="card-body">
+                            <button class="btn btn-outline-dark">Read</button>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            
+        </div>
+
+        <!-- SEARCH -->
+        <div class="container-fluid text-center theme-color book-container black-bg show" id="search-container" style="display: none;">
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="display-5" id="search-result-text">Search Results</h3>
+                </div>
+            </div>
+            <div class="row" id="search-row">
+                <!-- <div class="col-xs-6 col-sm-4 col-md-3">
+                    <div class="card">
+                        <img class="card-img-top book-thumbnail" src="../Pics/PDF thumbnail.jpg">
+                        <div class="card-body">
+                            <button class="btn btn-outline-dark">Read</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                    <div class="card">
+                        <img class="card-img-top book-thumbnail" src="../Pics/PDF thumbnail.jpg">
+                        <div class="card-body">
+                            <button class="btn btn-outline-dark">Read</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                    <div class="card">
+                        <img class="card-img-top book-thumbnail" src="../Pics/PDF thumbnail.jpg">
+                        <div class="card-body">
+                            <button class="btn btn-outline-dark">Read</button>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            
+        </div>
+
+        <!-- About section -->
+        <div class="container-fluid padding text-center theme-color" style="margin-top: 3.5em; padding: 2em">
+            <div class="row padding">
+                <div class="col-md-12">
+                    <h2>About Project</h2>
+                    <p>
+                        Jenta Cloud-Shelf E-library is an open, editable library catalog with its population focus being the people of
+                        Jenta, Jos. The library allows its users to upload books to its database, with the permission of its administrators. This allows 
+                        for the availabiity of a large array of books.
+                    </p>
+                    <p>
+                       Users can choose to read the books in the library environment, or download it to their local environment. 
+                    </p>
+                </div>
+                <div class="col-12">
+                    <img src="../Pics/logo edited.jpg" class="img-fluid">
+                </div>
+            </div>
+        </div>
+
+        <!-- Delete prompt -->
+        <div class="card-body shadow delete-prompt show" id="delete-prompt" style="display: none;">
+            <h5>Sure you wanna delete?</h5>
+            <button class="btn btn-warning prompt">Yes</button>
+            <button class="btn btn-primary prompt">No</button>
+        </div>
+
+        <!-- Book Details -->
+        <div class="container-fluid theme-color book-container black-bg show-prompt" id="single-book-container" style="display: none;">
+            <div class="close-button">
+                <span id="close-button" class="fa fa-close"></span>
+            </div>
+            <div class="row" id="single-book-row">
+                <div class="col-5">
+                    <div class="card">
+                        <img class="card-img-top single-book-thumbnail show-prompt" src="http://localhost:3000/Books/_thumbs/Book 6.jpg" id="single-book-thumb">
+                        <div class="card-body" style="background-color: darkslateblue;">
+                            <button class="btn btn-success" id="single-book-read-button">Read</button>
+                            <button class="btn btn-warning" id="single-book-delete-button">Delete</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-7">
+                    
+                        <h3 class="padding show-prompt">Title: <span id="single-book-title">Adams OshiomHole</span></h3>
+                        <h3 class="padding show-prompt">Author: <span id="single-book-author">Adams OshiomHole</span></h3>
+                        <h3 class="padding show-prompt">Category: <span id="single-book-category">Adams OshiomHole</span></h3>
+                        <h3 class="padding show-prompt">Description: <span id="single-book-description">Adams OshiomHole</span></h3>
+                        <h3 class="padding show-prompt">Uploaded By: <span id="single-book-uploader">Adams OshiomHole</span></h3>
+                    
+                </div>
+                </div>
+            </div>
+            
+        </div>
+    </body>

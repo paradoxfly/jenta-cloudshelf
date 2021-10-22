@@ -1,0 +1,319 @@
+.transform{
+    transform: translateZ(.2rem);
+}
+.shadow{
+    color: white;
+    border-radius: .4em;
+    background-color: rgb(68,68,68);
+
+    -moz-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+    -webkit-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+    box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3, MakeShadow=true,ShadowOpacity=0.30);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=3, MakeShadow=true,ShadowOpacity=0.30)";
+    zoom: 1;
+}
+.search-option{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 0;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    width: 8em;
+}
+#search-box{
+    width: 10em;
+}
+.black-bg{
+    background-color: black;
+}
+.theme-color{
+    color: rgb(50, 177, 228);
+    text-shadow: black;
+}
+.red-border{
+    border-color: red;
+}
+.error{
+    color: crimson;
+}
+.error-upload{
+    color: red;
+    font-weight: bolder;
+}
+.main {
+    width: 30%;
+}
+.subject{
+    margin: 0
+}
+#browse-subject-container{
+    color: brown;
+    font-weight: bolder;
+}
+.faint{
+    opacity: 0.2
+}
+.upload{
+    width: 100%;
+    border-radius: 0.5em;
+    padding: 0.2em;
+}
+.profile-name{
+    float: right;
+    font-weight: 400;
+    font-family: cursive;
+    font-size: small;
+    color: white;
+    padding: 0;
+    padding-right: 0.2em;
+    margin: 0;
+}
+.book-container{
+    /* background-color:slategray; */
+    background-color: cyan;
+    color: black;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 0.2em;
+    width: auto;
+    border-radius: 1em;
+    max-height: 850px;
+    overflow: auto;
+}
+.book-container::-webkit-scrollbar, body::-webkit-scrollbar{
+    width: 0.4em;
+}
+.book-container::-webkit-scrollbar-track, body::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+}
+.book-container::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb{
+    background-color: darkblue;
+    outline: 1px solid whitesmoke
+}
+.icon{
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.fa-paint-brush{
+    color: darkmagenta;
+}
+.fa-cogs{
+    color: black;
+}
+.fa-stethoscope{
+    color: green
+}
+.fa-gratipay{
+    color: rebeccapurple
+}
+.fa-rebel{
+    color: maroon
+}
+.fa-users{
+    color: blue
+}
+.upload-text{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 0.8em
+}
+.radio-text{
+    font-weight: 600;
+}
+.form-radio{
+    padding-left: 2.5em;
+}
+.warning{
+    font-weight: bold;
+    color: darkred;
+}
+.upload-button{
+    margin-bottom: 2em; 
+    background-color: black; 
+    color: whitesmoke
+}
+.upload-button:hover{
+    background-color: whitesmoke;
+    color: black
+}
+.card-body{
+    background-color: slategray;
+    text-align: center;
+}
+.btn-container{
+    padding-top: 1em;
+}
+.strike-through{
+    text-decoration: line-through
+}
+.single-book-thumbnail{
+    max-height: 500px;
+}
+#single-book-container{
+    position: fixed;
+    top: 10px;
+    left: 38px;
+    background-color: darkslateblue;
+    z-index: 1;
+    opacity: .1;
+}
+/* Media Queries */
+@media (min-width: 300px) {
+    .book-thumbnail{
+        height: 550px;
+        cursor: pointer;
+    }
+    .book-thumbnail-all{
+        height: 550px;
+        cursor: pointer;
+    }
+}
+@media (min-width: 574px) {
+    .login-form{
+        padding-left: 110px;
+        padding-right: 110px; 
+    }
+    .book-thumbnail{
+        height: 250px;
+        cursor: pointer;
+        /* width: 80px; */
+    }
+    .book-thumbnail-all{
+        height: 180px;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 768px) {
+    .login-form{
+        padding-left: 200px;
+        padding-right: 200px; 
+    }
+    .book-thumbnail{
+        height: 280px;
+        cursor: pointer;
+    }
+    .book-thumbnail-all{
+        height: 200px;
+        cursor: pointer;
+    }
+}   
+
+@media (min-width: 992px) {
+    .login-form{
+        padding-left: 350px;
+        padding-right: 350px; 
+    }
+    .book-thumbnail{
+        height: 315px;
+        cursor: pointer;
+    }
+    .book-thumbnail-all{
+        height: 180px;
+        cursor: pointer;
+    }
+}
+.close-button{
+    color: black;
+    font-size: 1.5em;
+    text-align: right;
+}
+.close-button span{
+    cursor: pointer;
+}
+.fa-close:hover{
+    color: red;
+}
+.delete-prompt{
+    z-index: 2;
+    position: fixed;
+    top: 30%;
+    left: 30%;
+    width: 30%;
+    background-color: black;
+    border-radius: 0.5em;
+    color: whitesmoke;
+}
+.prompt{
+    margin: 0.5em
+}
+
+/* Animation styles */
+@keyframes hide {
+    0% {
+      transform: translateY(1rem);
+      opacity: .8;
+    }
+    75% {
+      transform: translateY(5rem);
+      opacity: .3;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+    }
+}
+
+@keyframes show {
+    0% {
+      opacity: .1;
+    }
+  
+    50% {
+      transform: translateY(5rem);
+      transition: all .5s;
+      opacity: .3;
+      display: block;
+    }
+    75% {
+      /* transform: translateY(.5rem); */
+      opacity: .6;
+    }
+    100%{
+      transform: none;
+      opacity: .9;
+    }
+}
+
+@keyframes show-prompt {
+    0% {
+      opacity: .1;
+    }
+  
+    50% {
+      transform: translateZ(5rem);
+      transition: all .5s;
+      opacity: .3;
+      display: block;
+    }
+    75% {
+      /* transform: translateY(.5rem); */
+      opacity: .8;
+    }
+    100%{
+      transform: none;
+      opacity: 1;
+    }
+}
+.hide{
+    animation-name: hide;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    transition: all 1s;
+}
+  
+.show{
+    animation-name: show;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    transition: all 1s;
+}
+.show-prompt{
+    animation-name: show-prompt;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+    transition: all 1s;
+}

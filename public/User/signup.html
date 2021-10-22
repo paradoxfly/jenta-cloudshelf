@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Jenta Cloud-Shelf E-Library</title>
+        <link rel="stylesheet" type="text/css" href="../bootstrap-4.5.0-dist/css/bootstrap-grid.min.css">
+        <link rel="stylesheet" type="text/css" href="../bootstrap-4.5.0-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../Font Awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="../Styles/style.css">
+        <link rel="stylesheet" type="text/css" href="../Styles/mystyle.css">
+
+        <script src="../Scripts/jquery-3.4.1.min.js"></script>
+        <script src="../popper/popper.min.js"></script>
+        <script src="../bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+        <script src="../Scripts/functions.js"></script>
+    </head>
+    <body>
+        <!-- Navigation bar -->
+        <div class="container-fluid padding black-bg">
+            <div class="row text-center">
+                <div class="col-12">
+                    <img src="../Pics/logo edited.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid padding black-bg theme-color">
+            <div class="row welcome text-center">
+                <div class="col-12">
+                    <h1 class="display-5">Create An Account!</h1>
+                </div>
+                <hr>
+                <div class="col-12">
+                    <p class="lead">
+                        Make sure to choose a unique username and a password you can easily remember
+                    </p>
+                </div>
+            </div> 
+        </div>
+        <div class="container-fluid padding black-bg theme-color" id="successText" style="display: none;">
+            <div class="col-12 text-center">
+                <h1 class="display-4">Account Was Successfully Created</h1>
+            </div>
+        </div>
+
+        <!-- Sign up form -->
+        <div class="container-fluid text-center padding black-bg theme-color">
+            <form class="login-form" id="formContainer">
+                <div class="form-group row">
+                  <label for="username" class="col-form-label">Unique Username</label>
+                  <input type="text" class="form-control" id="username" placeholder="Enter Username">
+                  <small class="error" id="usernameErrorText"></small>
+                </div>
+                <div class="form-group row">
+                  <label for="password" class="col-form-label">Create Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Password">
+                  <small class="error" id="passwordErrorText"></small>
+                </div>
+                <div class="form-group row">
+                    <label for="password" class="col-form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirm-password" placeholder="Password">
+                    <small class="error" id="confirmPasswordErrorText"></small>
+                </div>
+                <button class="btn btn-outline-light" id="signup">Create Account</button>
+            </form>
+            <div class="row" style="padding-top: 2em;">
+                <div class="col-12">
+                    <a href="http://localhost:3000/index.html"><p class="lead">Back to login</p></a>
+                </div>                    
+            </div>
+        </div>
+        <div class="container-fluid black-bg theme-color">
+            <div class="row" style="padding-top: 2em;">
+                <a href="http://localhost:3000/Admin/admin-login.html"><p class="lead">Log In As Admin</p></a>
+            </div>
+        </div>
+        <script src="../Scripts/User/signup.js"></script> 
+    </body>

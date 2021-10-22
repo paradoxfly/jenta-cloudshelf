@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Jenta Cloud-Shelf E-Library</title>
+        <link rel="stylesheet" type="text/css" href="../bootstrap-4.5.0-dist/css/bootstrap-grid.min.css">
+        <link rel="stylesheet" type="text/css" href="../bootstrap-4.5.0-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../Font Awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="../Styles/style.css">
+        <link rel="stylesheet" type="text/css" href="../Styles/mystyle.css">
+
+        <script src="../Scripts/jquery-3.4.1.min.js"></script>
+        <script src="../popper/popper.min.js"></script>
+        <script src="../bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="profile-name">
+            <span>ADMIN</span>
+        </div>
+        <!-- Navigation bar -->
+        <div class="navbar navbar-dark black-bg">
+            <div class="container-fluid">
+                <div class="nav-item">
+                    <a href="http://localhost:3000/admin/admin-profile.html">
+                        <button class="btn btn-outline-light btn-sm"><span class="fa fa-arrow-left"></span> Back</button>
+                    </a>
+                </div>
+                <div class="navbar-brand">
+                    <img src="../Pics/logo edited.jpg">
+                </div>
+                
+                <div class="nav-item">
+                    <a href="http://localhost:3000/index.html">
+                        <button class="btn btn-outline-light btn-sm">Log Out <span class="fa fa-remove"></span></button>
+                    </a>
+                </div>
+               
+            </div>
+        </div>
+        
+        <!-- Upload Requests -->
+        <div class="container-fluid theme-color book-container show" id="upload-container" style="margin-bottom: 4em;">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h5 class="display-5">UPLOAD REQUESTS</h3>
+                </div>
+            </div>
+
+            <div class="row" id="upload-row">
+                <!-- Card -->
+                <!-- <div class="col-md-3 col-sm-6 col-xs-6">
+                    <div class="card">
+                        <img class="card-img-top book-thumbnail" id="thumb" src="../Pics/default.png">
+                        <div class="card-body">
+                            <button class="btn btn-outline-dark btn-sm">Read</button>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- Data -->
+                <!-- <div class="col-md-3 col-sm-6 col-xs-6" id="data">
+                    <h6 class="display-5 upload-text strike-through" id="uploader">Uploaded By: <span>Blah Blah Blah</span></h6>
+                    <h6 class="display-5 upload-text" id="title">Title Of Book: <span>Blah Blah Blah</span></h6>
+                    <h6 class="display-5 upload-text" id="category">Suggested Category: <span>Bleh Bleh</span></h6>
+                    <h6 class="display-5 upload-text" id="description">Description: <span>Blah blah blah</span></h6>
+                    <h6 class="display-5 upload-text">Adjust Parameters?
+                        <div id="toggle-category">
+                            <input type="radio" name = "category-adjust" id="yes"><label for="yes">Yes</label> 
+                            <input type="radio" name = "category-adjust" id="no" checked><label for="no">No</label>
+                        </div>
+                        <input type="text" placeholder="New Title" class="upload red-border" id="new-title" disabled>
+                        <input type="text" placeholder="New Author name" class="upload" id="new-author" disabled>
+                        <input type="text" placeholder="New Description" class="upload" id ="new-description" disabled> 
+                        <select name="category" size="1" id="new-category" class="upload" disabled>
+                            <option>Art</option>
+                            <option>Science</option>
+                            <option>Health</option>
+                            <option>Romance</option>
+                            <option>Fantasy</option>
+                            <option>Religion</option>
+                            <option>Others</option>
+                        </select>
+                    </h6>
+                    <div class="btn-container">
+                        <button class="btn btn-primary btn-sm" id="accept" disabled>Accept</button>
+                        <button class="btn btn-danger btn-sm" id="reject">Reject</button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <!-- Nothing to display -->
+        <div class="container-fluid theme-color book-container show" id="no-upload-container" style="margin-bottom: 4em; height: 100px; display: none;">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h4 class="display-4">NO UPLOAD REQUESTS</h4>
+                </div>
+            </div>
+        </div>
+        <script src='../Scripts/Admin/requests.js'></script>
+    </body>
